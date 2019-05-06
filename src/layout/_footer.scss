@@ -1,0 +1,33 @@
+.footer__page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: rem(110);
+    width: 100vw;
+    background-color: white;
+    border-top: rem(1) solid #d8d8d8;
+    box-sizing: border-box;
+
+    @media all and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 rem(40);
+        height: rem(60);
+    }
+}
+
+.footer__copyright {
+    @include Footer---Copy;
+    margin: 0 0 rem(11) 0;
+
+    @media all and (min-width: 768px) {
+        margin: 0;
+    }
+}
+
+.footer__image {
+    width: rem(103);
+    height: rem(40);
+}

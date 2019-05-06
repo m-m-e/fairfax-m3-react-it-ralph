@@ -37,8 +37,8 @@ class App extends React.Component {
       </div>
     );
     const everything = (
-      <div classNameName="page">
-      <div classNameName="landing__page">
+      <div className="page">
+      <div className="landing__page">
         {header}
         {main}
       </div>
