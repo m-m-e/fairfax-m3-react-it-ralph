@@ -1,9 +1,9 @@
-@import 'core/mixins';
-@import 'core/variables';
-@import 'core/functions';
-@import 'core/settings';
-@import 'layout/structure';
-@import 'layout/footer';
+@import 'stylesheets/core/mixins';
+@import 'stylesheets/core/variables';
+@import 'stylesheets/core/functions';
+@import 'stylesheets/core/settings';
+@import 'stylesheets/layout/structure';
+@import 'stylesheets/layout/footer';
 
 .landing__page {
   background-color: $color-background-light;

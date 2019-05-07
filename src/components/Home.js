@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './jigsaw_logo.svg';
-import logo_adalab from './logo-adalab.png';
-import './App.scss';
+import logo from '../images/jigsaw_logo.svg';
+import logo_adalab from '../images/logo-adalab.png';
+import '../App.scss';
 
-class App extends React.Component {
+class Home extends React.Component {
   render() {
     const header = (
       <header className="landing__header">
@@ -49,4 +49,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
