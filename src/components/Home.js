@@ -2,14 +2,11 @@ import React from 'react';
 import logo from '../images/jigsaw_logo.svg';
 import logo_adalab from '../images/logo-adalab.png';
 import '../App.scss';
+import Header from './Header';
+import Footer from './Footer';
 
 class Home extends React.Component {
   render() {
-    const header = (
-      <header className="landing__header">
-        <img className="landing__img" src={logo} alt="Awesome profile-cards logo"/>
-      </header>
-    );
     const main = (
       <main className="landing__main">
         <div className="landing__title-container">
@@ -28,21 +25,14 @@ class Home extends React.Component {
         </div>
       </main>
     );
-    const footer = (
-      <div className="footer__page">
-          <p className="footer__copyright">Awesome profile-cards @2018</p> 
-          <a href="https://adalab.es/" target="_blank">
-            <img src={logo_adalab} alt="logo de adalab" className="footer__image" />
-          </a>
-      </div>
-    );
+   
     const everything = (
       <div className="page">
       <div className="landing__page">
-        {header}
+        <Header logo={logo} />
         {main}
       </div>
-        {footer}
+        <Footer logo_adalab={logo_adalab} />
     </div>
     );
     return everything;    
