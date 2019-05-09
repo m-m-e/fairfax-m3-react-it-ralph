@@ -1,0 +1,255 @@
+legend {
+  visibility: hidden;
+  width: 0;
+  height: 0;    
+}
+
+fieldset {
+  border-color: transparent;
+}
+
+.legend {
+  color: grey;
+  padding-top: rem(40);
+}
+
+.legend_plus {
+  color: $color-secundary;
+}
+
+.form__collapsible , .design__main__container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.form__collapsible {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.design__container {
+  margin-top: 1rem;
+}
+.design__title__container , .design__main__container {
+  display: flex;
+  background: transparent;
+}
+
+.design__title__container {
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: rem(20);
+}
+
+.first__title {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+}
+
+.icon__collapsible {
+  margin: 1rem;
+  @include orange--icon---collapsible;
+}
+
+.arrow__collapsible {
+  margin: 1rem;
+  transform: rotate(180deg);
+  cursor: pointer;
+  @include arrow---collapsible;
+}
+
+.second__title {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.collapsible__title {
+  @include Collapsible-section---title;
+}
+
+.title__color__container , .form__color__container {
+  flex-grow: 1;
+}
+
+.color__title {
+  @include Collapsible---label;
+}
+.palettes {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.theme {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.theme__color {
+  width: 30px;
+  height: 0;
+  overflow:hidden;
+  padding-top: 30px;
+}
+
+.palettes__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.label__fill {
+  @include Label---fillform;
+}
+
+.input__fill {
+  @include Input;
+  background-color: transparent;
+}
+
+.fill__main__container {
+  margin-bottom: rem(30);
+}
+
+.thumbnail__container {
+  display: flex;   
+}
+
+.ellipsis {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.share__container {
+  margin-bottom: rem(30);
+}
+
+.container__button {
+  display: flex;
+  justify-content: center;
+}
+.share__button {
+  border-radius: rem(12);
+  padding: rem(13);
+  background: $color-secundary;
+  font-family: $fontFamilyPrimary;
+  font-size: rem(18);
+  text-transform: uppercase;
+  color: $color-white;
+  font-weight: 600;
+  margin: rem(30) 0;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+  border-style: none;
+  cursor: pointer;
+}
+
+.share__icon {
+  margin-right: rem(5);
+}
+
+.hidden__collapsible {
+  .collapsible__container {
+      display: none;
+  }
+  .arrow__collapsible {
+      transform: rotate(0deg);
+  }
+}
+
+.disabled__button{
+  background-color: lightgrey;
+  cursor: default;
+}
+
+.twitter__container {
+white-space: nowrap; 
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.action {
+  text-align: center;
+  margin: 30px;
+}
+.action__upload-btn {
+  background: $color-secundary;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0 0 5px rgba(#000, .3);
+  color: #fff;
+  font-family: sans-serif;
+  font-size: rem(14);
+  width: 140px;
+}
+.action__hiddenField {
+  display: none;
+}
+
+.profile {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.profile__image,
+.profile__preview {
+  background-position: center;
+  background-image: no-repeat;
+  background-size: cover;
+  border: 1px solid #ccc;
+}
+.profile__image {
+  width: 200px;
+  height: 200px;
+}
+
+.profile__preview {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+.twitter__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: rem(20) 0 rem(30) 0;
+  border-top: 1px solid #d8d8d8;
+}
+
+.twitter__container--text {
+  font-family: $fontFamilyPrimary;
+  font-size: rem(18);
+  color: $color-grey;
+  margin: 0;
+}
+
+.twitter__container--link {
+  text-decoration: none;
+  font-family: $fontFamilyPrimary;
+  font-size: rem(12);
+  color: $color-secundary;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: rem(10);
+  max-width: rem(309);
+  display: block;
+}
+
+.twitter__container--btn {
+  text-decoration: none;
+  padding: rem(6) rem(10);
+  font-family: $fontFamilyPrimary;
+  font-size: rem(14);
+  color: $color-white;
+  background-color: #00a0f5;
+}
+
+.twitter__icon {
+  font-size: rem(18);
+}
