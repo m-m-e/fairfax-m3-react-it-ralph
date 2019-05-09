@@ -2,9 +2,9 @@ import React from 'react';
 import logo from '../images/jigsaw_logo.svg';
 import logo_adalab from '../images/logo-adalab.png';
 import '../App.scss';
-import Footer from './Footer';
 import HeaderCard from './HeaderCard';
 import MainCard from './MainCard';
+import Footer from './Footer';
 
 class Card extends React.Component {
     render(){
