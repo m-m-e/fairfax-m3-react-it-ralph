@@ -3,6 +3,7 @@ import logo from '../images/jigsaw_logo.svg';
 import logo_adalab from '../images/logo-adalab.png';
 import '../App.scss';
 import Footer from './Footer';
+import HeaderCard from './HeaderCard';
 
 class Card extends React.Component {
     render(){
@@ -10,11 +11,7 @@ class Card extends React.Component {
 
         const mainContent = (
             <div className="page">
-                <header className="header__container">
-                    <h1 className="header">
-                        <img src={logo} alt="page logo" className="header__logo" />
-                    </h1>
-                </header>
+                <HeaderCard logo = {logo} />
                 <main className="main__container">
                     <section className="main__form">
                         <form action="" method="post">
