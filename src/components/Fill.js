@@ -1,5 +1,4 @@
 import React from 'react';
-import { realpath } from 'fs';
 
 class Fill extends React.Component {
   render() {
