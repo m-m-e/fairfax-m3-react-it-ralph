@@ -4,17 +4,6 @@ import { realpath } from 'fs';
 class Fill extends React.Component {
   render() {
     return(
-      <fieldset className="fill__container form__collapsible jscontainer hidden__collapsible">
-                        <legend>Rellena</legend>
-                        <div className="design__title__container">
-                            <div className="first__title">
-                                <i className="far fa-keyboard icon__collapsible"></i>
-                                <h2 className="collapsible__title">Rellena</h2>
-                            </div>
-                            <div className="second__title fill__collapsible">
-                                <i className="fas fa-chevron-down arrow__collapsible"></i>
-                            </div>
-                        </div>
                         <div className="fill__container__section collapsible__container">
                             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
                             <div className="fill__main__container">
@@ -57,7 +46,6 @@ class Fill extends React.Component {
                                     id="github" placeholder="Ej: sally-hill" required />
                             </div>
                         </div>
-                    </fieldset>
 
     );
   }

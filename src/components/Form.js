@@ -16,10 +16,23 @@ class Form extends React.Component {
                         icon={'far fa-object-ungroup'}
                         component={<Design />}
                         >
-                        
                     </Collapsable>
-                    <Fill />
-                    <Share />
+
+                    <Collapsable
+                        fieldset={'fill'}
+                        title={'Rellena'}
+                        icon={'far fa-keyboard'}
+                        component={<Fill />}
+                    >
+                    </Collapsable>
+
+                    <Collapsable
+                        fieldset={'share'}
+                        title={'Comparte'}
+                        icon={'fas fa-share-alt'}
+                        component={<Share />}
+                        >
+                    </Collapsable>
                 </form>
                 <Twitter />
             </section>

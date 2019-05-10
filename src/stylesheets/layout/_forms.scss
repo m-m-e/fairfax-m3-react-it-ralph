@@ -29,16 +29,17 @@ fieldset {
 .design__container {
   margin-top: 1rem;
 }
-.design__title__container , .design__main__container {
+.design__title__container , .design__main__container, .fill__title__container, .share__title__container {
   display: flex;
   background: transparent;
 }
 
-.design__title__container {
+.design__title__container , .fill__title__container , .share__title__container {
   cursor: pointer;
   align-items: center;
   margin-bottom: rem(20);
 }
+
 
 .first__title {
   flex-grow: 2;
