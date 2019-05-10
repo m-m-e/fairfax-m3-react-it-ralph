@@ -3,17 +3,6 @@ import React from 'react';
 class Design extends React.Component {
   render() {
     return (
-      <fieldset className="design__container form__collapsible jscontainer">
-        <legend>Diseña</legend>
-        <div className="design__title__container">
-          <div className="first__title">
-            <i className="far fa-object-ungroup icon__collapsible"></i>
-            <h2 className="collapsible__title">Diseña</h2>
-          </div>
-          <div className="second__title design__collapsible">
-            <i className="fas fa-chevron-down arrow__collapsible"></i>
-          </div>
-        </div>
         <div className="design__main__container collapsible__container">
           <div className="title__color__container">
             <p className="color__title">Colores</p>
@@ -45,7 +34,6 @@ class Design extends React.Component {
             </label>
           </div>
         </div>
-      </fieldset>
     );
   }
 }
