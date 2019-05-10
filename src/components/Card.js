@@ -11,7 +11,7 @@ class Card extends React.Component {
         const mainContent = (
             <div className="page">
                 <HeaderCard logo = {logo} />
-                <MainCard />
+                <MainCard url={this.props.url} />
                 <Footer logo_adalab={logo_adalab}/>
             </div>
         );
