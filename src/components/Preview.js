@@ -34,12 +34,12 @@ class Preview extends React.Component {
                                 </a>
                             </li>
                             <li className="reset__list preview__linkedin hidden">
-                                <a className="rs__element link__linkedin" href="" target="_blank">
+                                <a className="rs__element link__linkedin" href="linkedin_icon" target="_blank" rel="noopener noreferrer">
                                     <i className="icon fab fa-linkedin-in"></i>
                                 </a>
                             </li>
                             <li className="reset__list preview__github hidden">
-                                <a className="rs__element link__github" href="" target="_blank">
+                                <a className="rs__element link__github" href="github_icon" target="_blank">
                                     <i className="icon fab fa-github-alt"></i>
                                 </a>
                             </li>
