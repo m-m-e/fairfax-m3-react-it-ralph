@@ -2,6 +2,7 @@ import React from 'react';
 
 class Preview extends React.Component {
     render() {
+        const {name, job, email, tel, linkedin, github}=this.props;
         return(
             <section className="main__preview">
                 <div className="preview__wrapper">
@@ -12,8 +13,8 @@ class Preview extends React.Component {
                         <div className="card__header">
                             <div className="side__bar"></div>
                             <div className="full__name">
-                                <h3 className="preview__title">Nombre Apellido</h3>
-                                <h4 className="preview__subtitle">Front-end Developer</h4>
+                                <h3 className="preview__title">{name !== '' ? name : 'Ada Lovelace'}</h3>
+                                <h4 className="preview__subtitle">{job !== '' ? job : 'Front-end developer'}</h4>
                             </div>
                         </div>
                         <div className="profile">
@@ -24,22 +25,22 @@ class Preview extends React.Component {
                         </div>
                         <ul className="list__rs">
                             <li className="reset__list preview__email hidden">
-                                <a className="rs__element rs__email" href="mailto:">
+                                <a className="rs__element rs__email" href={`mailto:${email}`}>
                                     <i className="icon far fa-envelope"></i>
                                 </a>
                             </li>
                             <li className="reset__list preview__tel hidden">
-                                <a className="rs__element rs__tel" href="tel:">
+                                <a className="rs__element rs__tel" href={`tel:${tel}`}>
                                     <i className="icon fas fa-mobile-alt"></i>
                                 </a>
                             </li>
                             <li className="reset__list preview__linkedin hidden">
-                                <a className="rs__element link__linkedin" href="linkedin_icon" target="_blank" rel="noopener noreferrer">
+                                <a className="rs__element link__linkedin" href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noopener noreferrer">
                                     <i className="icon fab fa-linkedin-in"></i>
                                 </a>
                             </li>
                             <li className="reset__list preview__github hidden">
-                                <a className="rs__element link__github" href="github_icon" target="_blank">
+                                <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank">
                                     <i className="icon fab fa-github-alt"></i>
                                 </a>
                             </li>
