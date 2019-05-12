@@ -7,6 +7,7 @@ import Collapsable from './Collapsable';
 
 class Form extends React.Component {
     render() {
+        const {actionToPerform} = this.props;
         return (
             <section className="main__form">
                 <form action="" method="post">
@@ -22,7 +23,7 @@ class Form extends React.Component {
                         fieldset={'fill'}
                         title={'Rellena'}
                         icon={'far fa-keyboard'}
-                        component={<Fill />}
+                        component={<Fill actionToPerform={actionToPerform}/>}
                     >
                     </Collapsable>
 
