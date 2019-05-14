@@ -2,6 +2,7 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
+    const {actionColor, palette} = this.props;
     return (
         <div className="design__main__container collapsible__container">
           <div className="title__color__container">
@@ -9,7 +10,7 @@ class Design extends React.Component {
           </div>
           <div className="palettes">
             <label className="palettes__label" htmlFor="color1">
-              <input value="1" type="radio" id="color1" name="color" />
+              <input value="1" type="radio" id="color1" name="color" onChange={actionColor} checked={palette === 1 ? true : false} />
               <ul className="theme">
                 <li className="theme__color" style={{ backgroundColor: '#114e4e' }}>114e4e</li>
                 <li className="theme__color" style={{ backgroundColor: '#438792' }}>438792</li>
@@ -17,7 +18,7 @@ class Design extends React.Component {
               </ul>
             </label>
             <label className="palettes__label" htmlFor="color2">
-              <input value="2" type="radio" id="color2" name="color" />
+              <input value="2" type="radio" id="color2" name="color" onChange={actionColor} checked={palette === 2 ? true : false}/>
               <ul className="theme">
                 <li className="theme__color" style={{ backgroundColor: '#420101' }}>420101</li>
                 <li className="theme__color" style={{ backgroundColor: '#bd1010' }}>bd1010</li>
@@ -25,7 +26,7 @@ class Design extends React.Component {
               </ul>
             </label>
             <label className="palettes__label" htmlFor="color3">
-              <input value="3" type="radio" id="color3" name="color" />
+              <input value="3" type="radio" id="color3" name="color" onChange={actionColor} checked={palette === 3 ? true : false}/>
               <ul className="theme">
                 <li className="theme__color" style={{ backgroundColor: '#3e5b65' }}>3e5b65</li>
                 <li className="theme__color" style={{ backgroundColor: '#dfe5eb' }}>dfe5eb</li>
