@@ -3,7 +3,7 @@ import logo from '../images/jigsaw_logo.svg';
 import logo_adalab from '../images/logo_adalab';
 import '../App.scss';
 import Header from './Header';
-import Footer from './Footer';
+import Footer from '../Footer';
 import MainLanding from './MainLanding';
 
 class Home extends React.Component {
