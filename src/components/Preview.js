@@ -1,12 +1,21 @@
 import React from 'react';
 
 class Preview extends React.Component {
+    addPaletteClass() {
+        if(this.props.palette === 1) {
+            return ('photo__container paletteGreen')
+        }else if(this.props.palette === 2) {
+            return ('photo__container paletteRed')
+        }else {
+            return ('photo__container paletteBlue')
+        }
+    }
     render() {
         const {name, job, email, tel, linkedin, github}=this.props;
         return(
             <section className="main__preview">
                 <div className="preview__wrapper">
-                    <div className="photo__container">
+                    <div className={this.addPaletteClass()} >
                         <button className="btn__reset">
                             <i className="trash__icon far fa-trash-alt"></i>Reset
                         </button>
