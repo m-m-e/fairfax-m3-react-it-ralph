@@ -23,7 +23,7 @@ class Form extends React.Component {
                         fieldset={'fill'}
                         title={'Rellena'}
                         icon={'far fa-keyboard'}
-                        component={<Fill actionToPerform={actionToPerform}/>}
+                        component={<Fill actionToPerform={actionToPerform} name={this.props.name} job={this.props.job} email={this.props.email} tel={this.props.tel} linkedin={this.props.linkedin} github={this.props.github} />}
                     >
                     </Collapsable>
 

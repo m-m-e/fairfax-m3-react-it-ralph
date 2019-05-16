@@ -29,7 +29,7 @@ class MainCard extends React.Component{
         const {name, job, email, tel, linkedin, github}=this.state;
         return(
             <main className="main__container">
-            <Form actionToPerform={this.handleInput}/>
+            <Form actionToPerform={this.handleInput} name={this.state.name} job ={this.state.job} email={this.state.email} tel={this.state.tel} linkedin={this.state.linkedin} github={this.state.github}/>
             <Preview url={this.props.url} name={name} job={job} email={email} tel={tel} linkedin={linkedin} github={github}/>
             </main>
         );
