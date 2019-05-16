@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Fill extends React.Component {
   render() {
@@ -50,4 +51,14 @@ class Fill extends React.Component {
     );
   }
 }
+
+Fill.propTypes = {
+    name: PropTypes.string,
+    job: PropTypes.string,
+    email: PropTypes.string,
+    tel: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string
+};
+
 export default Fill;
