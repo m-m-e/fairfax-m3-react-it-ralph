@@ -33,22 +33,23 @@ class Preview extends React.Component {
                             </div>
                         </div>
                         <ul className="list__rs">
-                            <li className="reset__list preview__email hidden">
+                            <li className={email !== '' ? 'reset__list preview__email' : 'reset__list preview__email hidden'}>
                                 <a className="rs__element rs__email" href={`mailto:${email}`}>
                                     <i className="icon far fa-envelope"></i>
                                 </a>
                             </li>
-                            <li className="reset__list preview__tel hidden">
+                            <li className={tel !== '' ? 'reset__list preview__tel' : 'reset__list preview__tel hidden'}
+                            >
                                 <a className="rs__element rs__tel" href={`tel:${tel}`}>
                                     <i className="icon fas fa-mobile-alt"></i>
                                 </a>
                             </li>
-                            <li className="reset__list preview__linkedin hidden">
+                            <li className={linkedin !== '' ? 'reset__list preview__linkedin' : 'reset__list preview__linkedin hidden'}>
                                 <a className="rs__element link__linkedin" href={`https://www.linkedin.com/in/${linkedin}`} target="_blank" rel="noopener noreferrer">
                                     <i className="icon fab fa-linkedin-in"></i>
                                 </a>
                             </li>
-                            <li className="reset__list preview__github hidden">
+                            <li className={github !== '' ? 'reset__list preview__github' : 'reset__list preview__github hidden'}>
                                 <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank">
                                     <i className="icon fab fa-github-alt"></i>
                                 </a>
