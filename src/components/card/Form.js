@@ -7,7 +7,7 @@ import Collapsable from './Collapsable';
 
 class Form extends React.Component {
     render() {
-        const { actionToPerform, actionColor, palette } = this.props;
+        const { actionToPerform, actionColor, palette, actionToHidden } = this.props;
         return (
             <section className="main__form">
                 <form action="" method="post">
@@ -15,7 +15,8 @@ class Form extends React.Component {
                         fieldset={'design'}
                         title={'Diseña'}
                         icon={'far fa-object-ungroup'}
-                        component={<Design actionColor={actionColor} palette={palette}/>}
+                        actionToHidden={actionToHidden}
+                        component={<Design actionColor={actionColor} palette={palette} />}
                     >
                     </Collapsable>
 

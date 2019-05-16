@@ -50,7 +50,7 @@ class Preview extends React.Component {
                                 </a>
                             </li>
                             <li className={github !== '' ? 'reset__list preview__github' : 'reset__list preview__github hidden'}>
-                                <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank">
+                                <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank" rel="noopener noreferrer" >
                                     <i className="icon fab fa-github-alt"></i>
                                 </a>
                             </li>
