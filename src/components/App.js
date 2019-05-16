@@ -1,7 +1,5 @@
 import React from 'react';
-import '../App.scss';
-// import Home from './Home';
-import Card from './Card';
+import Card from './card/Card';
 
 
 
