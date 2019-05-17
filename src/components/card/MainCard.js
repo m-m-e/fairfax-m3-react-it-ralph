@@ -4,8 +4,8 @@ import Preview from './Preview';
 
 class MainCard extends React.Component{
     render(){
-        const {url, state, handleColor, handleInput} = this.props;
-        const {palette, name, job, email, tel, linkedin, github} = state;
+        const {url, card, handleColor, handleInput} = this.props;
+        const {palette, name, job, email, tel, linkedin, github} = card;
         return(
             <main className="main__container">
 
