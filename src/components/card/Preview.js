@@ -16,7 +16,7 @@ class Preview extends React.Component {
             <section className="main__preview">
                 <div className="preview__wrapper">
                     <div className={this.addPaletteClass()} >
-                        <button className="btn__reset">
+                        <button className="btn__reset" onClick={this.props.actionToReset}>
                             <i className="trash__icon far fa-trash-alt"></i>Reset
                         </button>
                         <div className="card__header">

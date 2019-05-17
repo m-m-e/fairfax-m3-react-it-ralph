@@ -16,13 +16,14 @@ class App extends React.Component {
         palette: 1,
         isAvatarDefault: true,
         profile: {
-         avatar: url
+          avatar: url
       }
     }
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   updateAvatar(img) {
     const { profile } = this.state;
@@ -43,8 +44,9 @@ class App extends React.Component {
         card: newPalette
       });
     });
-}
-handleInput(event) {
+  }
+
+  handleInput(event) {
     const currentField = event.currentTarget;
     const key = currentField.id;
     const value = currentField.value;
@@ -55,7 +57,24 @@ handleInput(event) {
         card: newCard
       });
     });
-}
+  }
+
+  handleReset() {
+    this.setState({
+      card: {
+        name:'',
+        job:'',
+        email:'',
+        tel:'',
+        linkedin:'',
+        github:'',
+        palette: 1,
+        isAvatarDefault: true,
+        profile: {
+          avatar: url
+        }
+      }})
+  }
    
   render() {
     const { isAvatarDefault, card } = this.state;
@@ -63,7 +82,8 @@ handleInput(event) {
       <div className="App">
         <Card image={card.profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={card.profile.avatar}
           isAvatarDefault={isAvatarDefault}
-          updateAvatar={this.updateAvatar}/>
+          updateAvatar={this.updateAvatar}
+          actionToReset={this.handleReset}/>
       </div>
     )
   }
