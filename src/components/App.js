@@ -22,7 +22,6 @@ handleColor(event){
     const value = parseInt(event.currentTarget.value);
     this.setState((prevState) => {
       const newPalette = {...prevState.card, palette:value};
-      console.log(newPalette);
       return ({
         card: newPalette
       });
@@ -35,7 +34,6 @@ handleInput(event) {
     this.setState((prevState) => {
       // []propiedad dinámica
       const newCard = {...prevState.card, [key]:value};
-      // console.log(newCard);
       return ({
         card: newCard
       });
