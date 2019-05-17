@@ -6,53 +6,63 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      job: '',
-      email: '',
-      tel: '',
-      linkedin: '',
-      github: '',
-      palette: 1,
-      isAvatarDefault: true,
-      profile: {
-        avatar: url
+      card: {
+        name:'',
+        job:'',
+        email:'',
+        tel:'',
+        linkedin:'',
+        github:'',
+        palette: 1,
+        isAvatarDefault: true,
+        profile: {
+         avatar: url
       }
     }
+  }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
   }
   updateAvatar(img) {
-    const { profile } = this.state;
+    const { profile } = this.state.card;
     this.setState(prevState => {
       const newProfile = { ...profile, avatar: img };
+      const newCard = {...prevState.card, profile: newProfile, isAvatarDefault: false};
       return {
-        profile: newProfile,
-        isAvatarDefault: false
+        card: newCard
       }
     });
   }
 
   handleColor(event) {
     const value = parseInt(event.currentTarget.value);
-    this.setState({ palette: value });
-  }
-  handleInput(event) {
+    this.setState((prevState) => {
+      const newPalette = {...prevState.card, palette:value};
+      return ({
+        card: newPalette
+      });
+    });
+}
+handleInput(event) {
     const currentField = event.currentTarget;
     const key = currentField.id;
     const value = currentField.value;
-    const newValue = {};
-    newValue[key] = value;
-
-    console.log(newValue);
-    this.setState(newValue);
-  }
+    this.setState((prevState) => {
+      // []propiedad dinámica
+      const newCard = {...prevState.card, [key]:value};
+      return ({
+        card: newCard
+      });
+    });
+}
+   
   render() {
-    const { profile, isAvatarDefault } = this.state;
+    const { card } = this.state;
     return (
       <div className="App">
-        <Card image={profile.avatar} state={this.state} handleColor={this.handleColor} handleInput={this.handleInput} avatar={profile.avatar}
-          isAvatarDefault={isAvatarDefault}
+        <Card image={card.profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={card.profile.avatar}
+          isAvatarDefault={card.isAvatarDefault}
           updateAvatar={this.updateAvatar}/>
       </div>
     )
