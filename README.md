@@ -1,1 +1,1 @@
-![alt text](./src/images/estructure.npg)
+![alt text](./src/images/structure.npg)
