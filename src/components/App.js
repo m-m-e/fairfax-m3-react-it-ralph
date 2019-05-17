@@ -23,6 +23,7 @@ class App extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
   updateAvatar(img) {
     const { profile } = this.state.card;
@@ -56,14 +57,38 @@ handleInput(event) {
       });
     });
 }
-   
+
+handleReset(){
+  this.setState({
+    card: {
+      name:'',
+      job:'',
+      email:'',
+      tel:'',
+      linkedin:'',
+      github:'',
+      palette: 1,
+      isAvatarDefault: true,
+      profile: {
+       avatar: url
+    }
+  }})
+} 
+
   render() {
     const { card } = this.state;
     return (
       <div className="App">
-        <Card image={card.profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={card.profile.avatar}
+        <Card 
+          image={card.profile.avatar} 
+          card={card} 
+          handleColor={this.handleColor} 
+          handleInput={this.handleInput} 
+          avatar={card.profile.avatar}
           isAvatarDefault={card.isAvatarDefault}
-          updateAvatar={this.updateAvatar}/>
+          updateAvatar={this.updateAvatar}
+          actionToReset={this.handleReset}
+        />
       </div>
     )
   }
