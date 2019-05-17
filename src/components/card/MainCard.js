@@ -4,7 +4,7 @@ import Preview from './Preview';
 
 class MainCard extends React.Component{
     render(){
-        const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar, actionToReset} = this.props;
+        const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar, actionToReset, actionToStore} = this.props;
         const {palette, name, job, email, tel, linkedin, github} = card;
         return(
             <main className="main__container">
@@ -16,6 +16,7 @@ class MainCard extends React.Component{
                 isAvatarDefault={isAvatarDefault} 
                 avatar={avatar} 
                 updateAvatar={updateAvatar}
+                actionToStore={actionToStore}
             />
             <Preview 
                 image={image} 

@@ -24,6 +24,7 @@ class App extends React.Component {
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleStorage = this.handleStorage.bind(this);
   }
   updateAvatar(img) {
     const { profile } = this.state.card;
@@ -52,6 +53,7 @@ handleInput(event) {
     this.setState((prevState) => {
       // []propiedad dinámica
       const newCard = {...prevState.card, [key]:value};
+      this.handleStorage(newCard);
       return ({
         card: newCard
       });
@@ -75,6 +77,10 @@ handleReset(){
   }})
 } 
 
+handleStorage(data){
+  localStorage.setItem('card', JSON.stringify(data));
+}
+
   render() {
     const { card } = this.state;
     return (
@@ -88,6 +94,7 @@ handleReset(){
           isAvatarDefault={card.isAvatarDefault}
           updateAvatar={this.updateAvatar}
           actionToReset={this.handleReset}
+          actionToStore={this.handleStorage}
         />
       </div>
     )
