@@ -25,12 +25,12 @@ class App extends React.Component {
     this.updateAvatar = this.updateAvatar.bind(this);
   }
   updateAvatar(img) {
-    const { profile } = this.state;
+    const { profile } = this.state.card;
     this.setState(prevState => {
       const newProfile = { ...profile, avatar: img };
+      const newCard = {...prevState.card, profile: newProfile, isAvatarDefault: false};
       return {
-        profile: newProfile,
-        isAvatarDefault: false
+        card: newCard
       }
     });
   }
@@ -58,11 +58,11 @@ handleInput(event) {
 }
    
   render() {
-    const { isAvatarDefault, card } = this.state;
+    const { card } = this.state;
     return (
       <div className="App">
         <Card image={card.profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={card.profile.avatar}
-          isAvatarDefault={isAvatarDefault}
+          isAvatarDefault={card.isAvatarDefault}
           updateAvatar={this.updateAvatar}/>
       </div>
     )
