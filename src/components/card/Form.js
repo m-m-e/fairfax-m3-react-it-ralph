@@ -7,7 +7,7 @@ import Collapsable from './Collapsable';
 
 class Form extends React.Component {
     render() {
-        const { actionToPerform, actionColor, palette, isAvatarDefault, avatar, updateAvatar, actionToStore} = this.props;
+        const { actionToPerform, actionColor, palette, isAvatarDefault, avatar, updateAvatar} = this.props;
         return (
             <section className="main__form">
                 <form action="" method="post">
@@ -34,7 +34,6 @@ class Form extends React.Component {
                             linkedin={this.props.linkedin} 
                             github={this.props.github} 
                             updateAvatar={updateAvatar}
-                            actionToStore={actionToStore}
                         />}
                     >
                     </Collapsable>

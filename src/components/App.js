@@ -41,6 +41,7 @@ class App extends React.Component {
     const value = parseInt(event.currentTarget.value);
     this.setState((prevState) => {
       const newPalette = {...prevState.card, palette:value};
+      this.handleStorage(newPalette);
       return ({
         card: newPalette
       });

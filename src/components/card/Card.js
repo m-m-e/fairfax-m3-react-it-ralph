@@ -7,7 +7,7 @@ import Footer from '../Footer';
 
 class Card extends React.Component {
     render(){
-        const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar, actionToReset, actionToStore} = this.props;
+        const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar, actionToReset} = this.props;
         const mainContent = (
             <div className="page">
                 <HeaderCard logo = {logo} />
@@ -20,7 +20,6 @@ class Card extends React.Component {
                     avatar={avatar}
                     updateAvatar={updateAvatar}
                     actionToReset={actionToReset}
-                    actionToStore={actionToStore}
                 />
                 <Footer logo_adalab={logo_adalab}/>
             </div>

@@ -4,7 +4,7 @@ import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const {actionToPerform, isAvatarDefault, avatar, updateAvatar,name, job,  email, tel, linkedin, github, actionToStore} = this.props;
+    const {actionToPerform, isAvatarDefault, avatar, updateAvatar,name, job,  email, tel, linkedin, github} = this.props;
     return(
         <div className="fill__container__section collapsible__container">
             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
