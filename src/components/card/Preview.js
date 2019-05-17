@@ -11,12 +11,12 @@ class Preview extends React.Component {
         }
     }
     render() {
-        const {name, job, email, tel, linkedin, github, image}=this.props;
+        const {name, job, email, tel, linkedin, github, image, actionToReset}=this.props;
         return(
             <section className="main__preview">
                 <div className="preview__wrapper">
                     <div className={this.addPaletteClass()} >
-                        <button className="btn__reset">
+                        <button className="btn__reset" onClick={actionToReset}>
                             <i className="trash__icon far fa-trash-alt"></i>Reset
                         </button>
                         <div className="card__header">
@@ -50,7 +50,7 @@ class Preview extends React.Component {
                                 </a>
                             </li>
                             <li className={github !== '' ? 'reset__list preview__github' : 'reset__list preview__github hidden'}>
-                                <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank">
+                                <a className="rs__element link__github" href={`https://github.com/${github}`} target="_blank" rel="noopener noreferrer">
                                     <i className="icon fab fa-github-alt"></i>
                                 </a>
                             </li>
