@@ -4,13 +4,13 @@ import Preview from './Preview';
 
 class MainCard extends React.Component{
     render(){
-        const {url, card, handleColor, handleInput} = this.props;
+        const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar } = this.props;
         const {palette, name, job, email, tel, linkedin, github} = card;
         return(
             <main className="main__container">
 
-            <Form actionToPerform={handleInput} actionColor={handleColor} palette={palette}/>
-            <Preview url={url} name={name} job={job} email={email} tel={tel} linkedin={linkedin} github={github} palette={palette}/>
+            <Form actionToPerform={handleInput} actionColor={handleColor} palette={palette} isAvatarDefault={isAvatarDefault} avatar={avatar} updateAvatar={updateAvatar}/>
+            <Preview image={image} name={name} job={job} email={email} tel={tel} linkedin={linkedin} github={github} palette={palette}/>
 
             </main>
         );
