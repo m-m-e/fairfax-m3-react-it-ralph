@@ -7,11 +7,11 @@ import Footer from '../Footer';
 
 class Card extends React.Component {
     render(){
-        const {url, state, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar} = this.props;
+        const {image, state, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar} = this.props;
         const mainContent = (
             <div className="page">
                 <HeaderCard logo = {logo} />
-                <MainCard url={url} state={state} handleColor={handleColor} handleInput={handleInput} isAvatarDefault={isAvatarDefault} avatar={avatar} updateAvatar={updateAvatar} />
+                <MainCard image={image} state={state} handleColor={handleColor} handleInput={handleInput} isAvatarDefault={isAvatarDefault} avatar={avatar} updateAvatar={updateAvatar} />
                 <Footer logo_adalab={logo_adalab}/>
             </div>
         );

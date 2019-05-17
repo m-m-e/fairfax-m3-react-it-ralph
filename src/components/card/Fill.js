@@ -26,10 +26,6 @@ class Fill extends React.Component {
                     <GetAvatar 
                     isAvatarDefault={isAvatarDefault} 
                     avatar={avatar} updateAvatar={updateAvatar}/>
-                    {/* <button className="action__upload-btn js__profile-trigger" type="button">Añadir imagen</button>
-                    <input type="file" name="photo" id="img-selector"
-                        className="action__hiddenField js__profile-upload-btn"  required />
-                    <div className="profile__preview js__profile-preview"></div> */}
                 </div>
 
                 <label className="label__fill" htmlFor="email">Email <span className="legend_plus">*</span>

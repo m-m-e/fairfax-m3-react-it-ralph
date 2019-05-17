@@ -51,7 +51,7 @@ class App extends React.Component {
     const { profile, isAvatarDefault } = this.state;
     return (
       <div className="App">
-        <Card url={url} state={this.state} handleColor={this.handleColor} handleInput={this.handleInput} avatar={profile.avatar}
+        <Card image={profile.avatar} state={this.state} handleColor={this.handleColor} handleInput={this.handleInput} avatar={profile.avatar}
           isAvatarDefault={isAvatarDefault}
           updateAvatar={this.updateAvatar}/>
       </div>

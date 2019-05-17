@@ -11,7 +11,7 @@ class Preview extends React.Component {
         }
     }
     render() {
-        const {name, job, email, tel, linkedin, github}=this.props;
+        const {name, job, email, tel, linkedin, github, image}=this.props;
         return(
             <section className="main__preview">
                 <div className="preview__wrapper">
@@ -27,8 +27,8 @@ class Preview extends React.Component {
                             </div>
                         </div>
                         <div className="profile">
-                            <div className="preview__photo profile__image js__profile-image" style={{backgroundImage:`url(${this.props.url})`}}>
-                                <img src={this.props.url}
+                            <div className="preview__photo profile__image js__profile-image" style={{backgroundImage:`url(${image})`}}>
+                                <img src={image}
                                 alt="Foto del usuario" className="photo" />
                             </div>
                         </div>
