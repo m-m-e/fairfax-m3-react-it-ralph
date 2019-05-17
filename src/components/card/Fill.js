@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const {actionToPerform} = this.props;
+    const {actionToPerform, isAvatarDefault, avatar, updateAvatar} = this.props;
     return(
         <div className="fill__container__section collapsible__container">
             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
@@ -22,10 +23,9 @@ class Fill extends React.Component {
                 </label>
                 <div className="thumbnail__container">
                     <label htmlFor="avatar"></label>
-                    <button className="action__upload-btn js__profile-trigger" type="button">Añadir imagen</button>
-                    <input type="file" name="photo" id="img-selector"
-                        className="action__hiddenField js__profile-upload-btn"  required />
-                    <div className="profile__preview js__profile-preview"></div>
+                    <GetAvatar 
+                    isAvatarDefault={isAvatarDefault} 
+                    avatar={avatar} updateAvatar={updateAvatar}/>
                 </div>
 
                 <label className="label__fill" htmlFor="email">Email <span className="legend_plus">*</span>
