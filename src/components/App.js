@@ -19,6 +19,7 @@ class App extends React.Component {
          avatar: url
       }
     }
+  }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
@@ -57,10 +58,10 @@ handleInput(event) {
 }
    
   render() {
-    const { profile, isAvatarDefault, card } = this.state;
+    const { isAvatarDefault, card } = this.state;
     return (
       <div className="App">
-        <Card image={profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={profile.avatar}
+        <Card image={card.profile.avatar} card={card} handleColor={this.handleColor} handleInput={this.handleInput} avatar={card.profile.avatar}
           isAvatarDefault={isAvatarDefault}
           updateAvatar={this.updateAvatar}/>
       </div>
