@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../images/jigsaw_logo.svg';
-import logo_adalab from '../images/logo_adalab';
-import '../App.scss';
+import logo from '../../images/jigsaw_logo.svg';
+import logo_adalab from '../../images/logo-adalab.png';
+import '../../stylesheets/index.scss';
 import Header from './Header';
 import Footer from '../Footer';
 import MainLanding from './MainLanding';

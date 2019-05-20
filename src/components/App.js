@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from './card/Card';
+import Home from './home/Home';
 import url from './card/defaultImage';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -79,16 +81,22 @@ handleReset(){
     const { card } = this.state;
     return (
       <div className="App">
-        <Card 
-          image={card.profile.avatar} 
-          card={card} 
-          handleColor={this.handleColor} 
-          handleInput={this.handleInput} 
-          avatar={card.profile.avatar}
-          isAvatarDefault={card.isAvatarDefault}
-          updateAvatar={this.updateAvatar}
-          actionToReset={this.handleReset}
-        />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/Card" render={routerProps => (
+          <Card 
+            image={card.profile.avatar} 
+            card={card} 
+            handleColor={this.handleColor} 
+            handleInput={this.handleInput} 
+            avatar={card.profile.avatar}
+            isAvatarDefault={card.isAvatarDefault}
+            updateAvatar={this.updateAvatar}
+            actionToReset={this.handleReset}
+          /> )
+          } 
+          />
+        </Switch>
       </div>
     )
   }
