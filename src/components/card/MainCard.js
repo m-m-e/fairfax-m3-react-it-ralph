@@ -16,6 +16,12 @@ class MainCard extends React.Component{
                 isAvatarDefault={isAvatarDefault} 
                 avatar={avatar} 
                 updateAvatar={updateAvatar}
+                name={name} 
+                job={job} 
+                email={email} 
+                tel={tel} 
+                linkedin={linkedin} 
+                github={github} 
             />
             <Preview 
                 image={image} 
