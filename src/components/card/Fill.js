@@ -4,7 +4,7 @@ import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const {actionToPerform, isAvatarDefault, avatar, updateAvatar,name, job,  email, tel, linkedin, github} = this.props;
+    const {actionToPerform, isAvatarDefault, avatar, updateAvatar,name, job, email, tel, linkedin, github} = this.props;
     return(
         <div className="fill__container__section collapsible__container">
             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
@@ -16,12 +16,11 @@ class Fill extends React.Component {
                     type="text"
                     name="name" 
                     id="name"
-                    placeholder="Ej: Silly Sally" 
+                    placeholder= {name !== '' ? name : "Ej: Silly Sally"}
                     onChange={actionToPerform}
                     value={name}
                     required 
                 />
-
                 <label className="label__fill" htmlFor="job">Puesto <span className="legend_plus">*</span>
                 </label>
                 <input 
