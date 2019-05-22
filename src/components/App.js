@@ -64,8 +64,7 @@ class App extends React.Component {
   }
 
 handleReset(){
-  this.setState({
-    card: {
+  const defaultCard = {
       name:'',
       job:'',
       email:'',
@@ -74,8 +73,11 @@ handleReset(){
       github:'',
       palette: 1,
       photo: url
-    },
-    isAvatarDefault: true,
+  }
+  this.handleStorage(defaultCard)
+  this.setState({
+    card: defaultCard, 
+    isAvatarDefault: true
   })
 } 
   handleStorage(data) {
@@ -83,7 +85,7 @@ handleReset(){
   }
   getData() {
     const newData = JSON.parse(localStorage.getItem('card'));
-    console.log(newData);
+    // console.log(newData);
     if (newData !== null ) {
       this.setState(prevState => {
         return {
