@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class MainLanding extends React.Component {
   render() {
@@ -15,7 +16,8 @@ class MainLanding extends React.Component {
                 <li className="icons__list--item"> <i className="fas fa-share-alt icons__item"></i>Comparte</li>
             </ul>
         </div>
-        <div className="landing__button"> <a href="main.html" title="Botón de comenzar" className="landing__button--link">Comenzar</a>
+        <div className="landing__button">
+        <Link className="landing__button--link" to="/Card">Comenzar</Link>
         </div>
       </main>
     );

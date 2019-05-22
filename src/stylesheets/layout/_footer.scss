@@ -8,6 +8,8 @@
     background-color: white;
     border-top: rem(1) solid #d8d8d8;
     box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
 
     @media all and (min-width: 768px) {
         flex-direction: row;
