@@ -9,20 +9,22 @@ class Card extends React.Component {
     render(){
         const {image, card, handleColor, handleInput, isAvatarDefault, avatar, updateAvatar, actionToReset} = this.props;
         const mainContent = (
-            <div className="page">
-                <HeaderCard logo = {logo} />
-                <MainCard 
-                    image={image}
-                    card={card}
-                    handleColor={handleColor}
-                    handleInput={handleInput}
-                    isAvatarDefault={isAvatarDefault}
-                    avatar={avatar}
-                    updateAvatar={updateAvatar}
-                    actionToReset={actionToReset}
-                />
+            <React.Fragment>
+                <div className="page__card">
+                    <HeaderCard logo = {logo} />
+                    <MainCard 
+                        image={image}
+                        card={card}
+                        handleColor={handleColor}
+                        handleInput={handleInput}
+                        isAvatarDefault={isAvatarDefault}
+                        avatar={avatar}
+                        updateAvatar={updateAvatar}
+                        actionToReset={actionToReset}
+                    />
+                </div>
                 <Footer logo_adalab={logo_adalab}/>
-            </div>
+            </React.Fragment>    
         );
         return mainContent;
     }
