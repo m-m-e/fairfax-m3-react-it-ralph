@@ -10,15 +10,13 @@ class App extends React.Component {
         name:'',
         job:'',
         email:'',
-        tel:'',
+        phone:'',
         linkedin:'',
         github:'',
         palette: 1,
-        isAvatarDefault: true,
-        profile: {
-         avatar: url
-      }
-    }
+        photo: url, 
+      },
+      isAvatarDefault: true,
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
@@ -26,12 +24,11 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
   }
   updateAvatar(img) {
-    const { profile } = this.state.card;
     this.setState(prevState => {
-      const newProfile = { ...profile, avatar: img };
-      const newCard = {...prevState.card, profile: newProfile, isAvatarDefault: false};
+      const newCard = {...prevState.card, photo: img};
       return {
-        card: newCard
+        card: newCard,
+        isAvatarDefault: false
       }
     });
   }
@@ -64,28 +61,26 @@ handleReset(){
       name:'',
       job:'',
       email:'',
-      tel:'',
+      phone:'',
       linkedin:'',
       github:'',
       palette: 1,
-      isAvatarDefault: true,
-      profile: {
-       avatar: url
-    }
-  }})
+      photo: url
+    },
+    isAvatarDefault: true,
+  })
 } 
 
   render() {
-    const { card } = this.state;
+    const { card, isAvatarDefault } = this.state;
     return (
       <div className="App">
         <Card 
-          image={card.profile.avatar} 
           card={card} 
           handleColor={this.handleColor} 
           handleInput={this.handleInput} 
-          avatar={card.profile.avatar}
-          isAvatarDefault={card.isAvatarDefault}
+          photo={card.photo}
+          isAvatarDefault={isAvatarDefault}
           updateAvatar={this.updateAvatar}
           actionToReset={this.handleReset}
         />

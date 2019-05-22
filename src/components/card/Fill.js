@@ -4,7 +4,7 @@ import GetAvatar from './GetAvatar';
 
 class Fill extends React.Component {
   render() {
-    const {actionToPerform, isAvatarDefault, avatar, updateAvatar, name, job, email, tel, linkedin, github} = this.props;
+    const {actionToPerform, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github} = this.props;
     return(
         <div className="fill__container__section collapsible__container">
             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
@@ -25,7 +25,7 @@ class Fill extends React.Component {
                     <label htmlFor="avatar"></label>
                     <GetAvatar 
                     isAvatarDefault={isAvatarDefault} 
-                    avatar={avatar} updateAvatar={updateAvatar}/>
+                    photo={photo} updateAvatar={updateAvatar}/>
                 </div>
 
                 <label className="label__fill" htmlFor="email">Email <span className="legend_plus">*</span>
@@ -34,8 +34,7 @@ class Fill extends React.Component {
                     placeholder="Ej: sally-hill@gmail.com" onChange={actionToPerform} value={email} required />
 
                 <label className="label__fill" htmlFor="tel">Teléfono</label>
-                <input className="input__fill  input__tel" type="tel" name="phone"
-                    id="tel" maxLength="15" placeholder="Ej: 555 555 555"  onChange={actionToPerform} value={tel} required />
+                <input className="input__fill  input__tel" type="tel" name="phone" id="tel" maxLength="15" placeholder="Ej: 555 555 555" onChange={actionToPerform} value={phone} required />
 
                 <label className="label__fill" htmlFor="linkedin">Linkedin <span className="legend_plus">*</span></label>
                 <input className="input__fill input__linkedin ellipsis" type="text" name="linkedin"
@@ -56,7 +55,7 @@ Fill.propTypes = {
     name: PropTypes.string,
     job: PropTypes.string,
     email: PropTypes.string,
-    tel: PropTypes.string,
+    phone: PropTypes.string,
     linkedin: PropTypes.string,
     github: PropTypes.string
 };
