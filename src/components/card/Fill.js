@@ -33,8 +33,8 @@ class Fill extends React.Component {
                 <input className="input__fill input__email" type="email" name="email" id="email"
                     placeholder="Ej: sally-hill@gmail.com" onChange={actionToPerform} value={email} required />
 
-                <label className="label__fill" htmlFor="tel">Teléfono</label>
-                <input className="input__fill  input__tel" type="tel" name="phone" id="tel" maxLength="15" placeholder="Ej: 555 555 555" onChange={actionToPerform} value={phone} required />
+                <label className="label__fill" htmlFor="phone">Teléfono</label>
+                <input className="input__fill  input__tel" type="tel" name="phone" id="phone" maxLength="15" placeholder="Ej: 555 555 555" onChange={actionToPerform} value={phone} required />
 
                 <label className="label__fill" htmlFor="linkedin">Linkedin <span className="legend_plus">*</span></label>
                 <input className="input__fill input__linkedin ellipsis" type="text" name="linkedin"
