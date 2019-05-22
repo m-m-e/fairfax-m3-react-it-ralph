@@ -11,7 +11,7 @@ class Preview extends React.Component {
         }
     }
     render() {
-        const {name, job, email, tel, linkedin, github, image, actionToReset}=this.props;
+        const {name, job, email, phone, linkedin, github, photo, actionToReset}=this.props;
         return(
             <section className="main__preview">
                 <div className="preview__wrapper">
@@ -27,8 +27,8 @@ class Preview extends React.Component {
                             </div>
                         </div>
                         <div className="profile">
-                            <div className="preview__photo profile__image js__profile-image" style={{backgroundImage:`url(${image})`}}>
-                                <img src={image}
+                            <div className="preview__photo profile__image js__profile-image" style={{backgroundImage:`url(${photo})`}}>
+                                <img src={photo}
                                 alt="Foto del usuario" className="photo" />
                             </div>
                         </div>
@@ -38,9 +38,9 @@ class Preview extends React.Component {
                                     <i className="icon far fa-envelope"></i>
                                 </a>
                             </li>
-                            <li className={tel !== '' ? 'reset__list preview__tel' : 'reset__list preview__tel hidden'}
+                            <li className={phone !== '' ? 'reset__list preview__tel' : 'reset__list preview__tel hidden'}
                             >
-                                <a className="rs__element rs__tel" href={`tel:${tel}`}>
+                                <a className="rs__element rs__tel" href={`tel:${phone}`}>
                                     <i className="icon fas fa-mobile-alt"></i>
                                 </a>
                             </li>

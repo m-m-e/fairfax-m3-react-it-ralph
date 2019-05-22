@@ -9,20 +9,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       card: {
-        name: '',
-        job: '',
-        email: '',
-        tel: '',
-        linkedin: '',
-        github: '',
+        name:'',
+        job:'',
+        email:'',
+        phone:'',
+        linkedin:'',
+        github:'',
         palette: 1,
-        isAvatarDefault: true,
-        profile: {
-          avatar: url
+        photo: url, 
       },
-      }
-    }
-
+      isAvatarDefault: true,
+  }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
@@ -33,12 +30,11 @@ class App extends React.Component {
     this.getData();
   }
   updateAvatar(img) {
-    const { profile } = this.state.card;
     this.setState(prevState => {
-      const newProfile = { ...profile, avatar: img };
-      const newCard = { ...prevState.card, profile: newProfile, isAvatarDefault: false };
+      const newCard = {...prevState.card, photo: img};
       return {
-        card: newCard
+        card: newCard,
+        isAvatarDefault: false
       }
     });
   }
@@ -67,32 +63,29 @@ class App extends React.Component {
     });
   }
 
-  handleReset() {
-    const defaultCard = {
-      name: '',
-      job: '',
-      email: '',
-      tel: '',
-      linkedin: '',
-      github: '',
+handleReset(){
+  const defaultCard = {
+      name:'',
+      job:'',
+      email:'',
+      phone:'',
+      linkedin:'',
+      github:'',
       palette: 1,
-      isAvatarDefault: true,
-      profile: {
-        avatar: url
-      }
-    };
-    this.handleStorage(defaultCard)
-    this.setState({
-      card: defaultCard
-    })
+      photo: url
   }
-
+  this.handleStorage(defaultCard)
+  this.setState({
+    card: defaultCard, 
+    isAvatarDefault: true
+  })
+} 
   handleStorage(data) {
     localStorage.setItem('card', JSON.stringify(data));
   }
   getData() {
     const newData = JSON.parse(localStorage.getItem('card'));
-    console.log(newData);
+    // console.log(newData);
     if (newData !== null ) {
       this.setState(prevState => {
         return {
@@ -102,19 +95,18 @@ class App extends React.Component {
     }
   }
   render() {
-    const { card } = this.state;
+    const { card, isAvatarDefault } = this.state;
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Card" render={routerProps => (
           <Card 
-            image={card.profile.avatar} 
             card={card} 
             handleColor={this.handleColor} 
             handleInput={this.handleInput} 
-            avatar={card.profile.avatar}
-            isAvatarDefault={card.isAvatarDefault}
+            photo={card.photo}
+            isAvatarDefault={isAvatarDefault}
             updateAvatar={this.updateAvatar}
             actionToReset={this.handleReset}
             actionToStore={this.handleStorage}
