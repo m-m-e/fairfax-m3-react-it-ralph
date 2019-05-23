@@ -3,12 +3,13 @@ import React from 'react';
 class Twitter extends React.Component {
   render() {
     return (
-      <div className="twitter__container hidden">
+      <div className="twitter__container">
         <h2 className="twitter__container--text">La tarjeta ha sido creada</h2>
         <a href="twitter_anchor" className="twitter__container--link">#</a>
-        <button className="twitter__container--btn">
+        <a className="twitter__container--btn" href="http://twitter.com/share?text=¿Quieres conocer mi perfil profesional? ¡Aquí tienes mi tarjeta digital! 🙌 &url=http://beta.adalab.es/fairfax-m3-react-it-ralph/#/&hashtags=tarjetadigital,reactitcard,adalabers"
+        >
           <i className="fab fa-twitter twitter__icon"></i> Compartir en twitter
-        </button>
+        </a>
       </div>
     );
   }
