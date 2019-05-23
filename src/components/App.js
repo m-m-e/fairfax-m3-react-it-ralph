@@ -3,6 +3,7 @@ import Card from './card/Card';
 import Home from './home/Home';
 import url from './card/defaultImage';
 import { Route, Switch } from 'react-router-dom';
+import {sendPetition} from '../services/SendPetition';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,24 +20,41 @@ class App extends React.Component {
         photo: url, 
       },
       isAvatarDefault: true,
+      cardURL: ''
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleStorage = this.handleStorage.bind(this);
+    this.sendNewData = this.sendNewData.bind(this);
   }
+
   componentDidMount() {
     this.getData();
   }
+
   updateAvatar(img) {
     this.setState(prevState => {
       const newCard = {...prevState.card, photo: img};
+      this.handleStorage(newCard);
       return {
         card: newCard,
         isAvatarDefault: false
       }
     });
+  }
+
+  sendNewData () {
+    const card = this.state.card;
+
+    sendPetition(card)
+      .then(result => {
+        this.setState({
+          cardURL: result
+        })
+      })
+      .catch(error => console.log(error));
   }
 
   handleColor(event) {
@@ -49,6 +67,7 @@ class App extends React.Component {
       });
     });
   }
+
   handleInput(event) {
     const currentField = event.currentTarget;
     const key = currentField.id;
@@ -63,26 +82,28 @@ class App extends React.Component {
     });
   }
 
-handleReset(){
-  const defaultCard = {
-      name:'',
-      job:'',
-      email:'',
-      phone:'',
-      linkedin:'',
-      github:'',
-      palette: 1,
-      photo: url
-  }
-  this.handleStorage(defaultCard)
-  this.setState({
-    card: defaultCard, 
-    isAvatarDefault: true
-  })
-} 
+  handleReset(){
+    const defaultCard = {
+        name:'',
+        job:'',
+        email:'',
+        phone:'',
+        linkedin:'',
+        github:'',
+        palette: 1,
+        photo: url
+    }
+    this.handleStorage(defaultCard)
+    this.setState({
+      card: defaultCard, 
+      isAvatarDefault: true
+    })
+  } 
+
   handleStorage(data) {
     localStorage.setItem('card', JSON.stringify(data));
   }
+
   getData() {
     const newData = JSON.parse(localStorage.getItem('card'));
     // console.log(newData);
@@ -94,6 +115,7 @@ handleReset(){
       })
     }
   }
+  
   render() {
     const { card, isAvatarDefault } = this.state;
     return (
@@ -110,6 +132,7 @@ handleReset(){
             updateAvatar={this.updateAvatar}
             actionToReset={this.handleReset}
             actionToStore={this.handleStorage}
+            sendNewData={this.sendNewData}
           /> )
           } 
           />
