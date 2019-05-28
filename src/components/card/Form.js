@@ -12,7 +12,7 @@ class Form extends React.Component {
     }
 
     render() {
-        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, sendNewData } = this.props;
+        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, sendNewData, handleTwitter, showTwitter } = this.props;
         return (
             <section className="main__form">
                 <form action="" method="post" onSubmit={this.preventSubmit}>
@@ -48,12 +48,13 @@ class Form extends React.Component {
                         title={'Comparte'}
                         icon={'fas fa-share-alt'}
                         component={<Share 
-                            sendNewData={sendNewData} />}
-
+                            sendNewData={sendNewData}
+                            handleTwitter={handleTwitter}
+                            showTwitter={showTwitter} />}
                     >
                     </Collapsable>
+                    <Twitter showTwitter={showTwitter} />
                 </form>
-                <Twitter />
             </section>
         );
     }

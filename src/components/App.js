@@ -20,7 +20,8 @@ class App extends React.Component {
         photo: url, 
       },
       isAvatarDefault: true,
-      cardURL: ''
+      cardURL: '',
+      showTwitter: false
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
@@ -28,6 +29,7 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleStorage = this.handleStorage.bind(this);
     this.sendNewData = this.sendNewData.bind(this);
+    this.handleTwitter = this.handleTwitter.bind(this);
   }
 
   componentDidMount() {
@@ -122,7 +124,12 @@ class App extends React.Component {
       }
     }
   }
-  
+  handleTwitter(event){
+    event.preventDefault();
+    this.setState(
+      (prevState)=>{return{showTwitter: !prevState.showTwitter}}
+    )
+  }
   render() {
     const { card, isAvatarDefault } = this.state;
     return (
@@ -140,6 +147,8 @@ class App extends React.Component {
             actionToReset={this.handleReset}
             actionToStore={this.handleStorage}
             sendNewData={this.sendNewData}
+            handleTwitter={this.handleTwitter}
+            showTwitter = {this.state.showTwitter}
           /> )
           } 
           />
