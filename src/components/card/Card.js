@@ -7,7 +7,7 @@ import Footer from '../Footer';
 
 class Card extends React.Component {
     render(){
-        const {image, card, handleColor, handleInput, isAvatarDefault, photo, updateAvatar, actionToReset, handleTwitter, showTwitter} = this.props;
+        const {image, card, handleColor, handleInput, isAvatarDefault, photo, updateAvatar, actionToReset, handleTwitter, sendNewData, showTwitter,cardURL} = this.props;
         const mainContent = (
             <React.Fragment>
                 <div className="page__card">
@@ -21,8 +21,10 @@ class Card extends React.Component {
                         photo={photo}
                         updateAvatar={updateAvatar}
                         actionToReset={actionToReset}
+                        sendNewData={sendNewData}
                         handleTwitter = {handleTwitter}
                         showTwitter={showTwitter}
+                        cardURL={cardURL}
                     />
                 </div>
                 <Footer logo_adalab={logo_adalab}/>

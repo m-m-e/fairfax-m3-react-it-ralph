@@ -6,11 +6,16 @@ import Twitter from './Twitter';
 import Collapsable from './Collapsable';
 
 class Form extends React.Component {
+
+    preventSubmit(event) {
+        event.preventDefault();
+    }
+
     render() {
-        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, handleTwitter, showTwitter } = this.props;
+        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, sendNewData, handleTwitter, showTwitter, cardURL } = this.props;
         return (
             <section className="main__form">
-                <form action="" method="post">
+                <form action="" method="post" onSubmit={this.preventSubmit}>
                     <Collapsable
                         fieldset={'design'}
                         title={'Diseña'}
@@ -43,11 +48,15 @@ class Form extends React.Component {
                         title={'Comparte'}
                         icon={'fas fa-share-alt'}
                         component={<Share 
+                            sendNewData={sendNewData}
                             handleTwitter={handleTwitter}
-                            showTwitter={showTwitter} />}
+                            showTwitter={showTwitter}
+                             />}
                     >
                     </Collapsable>
-                    <Twitter showTwitter={showTwitter} />
+                    <Twitter 
+                        showTwitter={showTwitter} 
+                        cardURL={cardURL} />
                 </form>
             </section>
         );
