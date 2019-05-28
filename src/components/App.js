@@ -16,15 +16,17 @@ class App extends React.Component {
         linkedin:'',
         github:'',
         palette: 1,
-        photo: url, 
+        photo: url
       },
       isAvatarDefault: true,
+      collapsible: null
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleStorage = this.handleStorage.bind(this);
+    this.handleCollapsible = this.handleCollapsible.bind(this);
   }
   componentDidMount() {
     this.getData();
@@ -63,23 +65,40 @@ class App extends React.Component {
     });
   }
 
-handleReset(){
-  const defaultCard = {
-      name:'',
-      job:'',
-      email:'',
-      phone:'',
-      linkedin:'',
-      github:'',
-      palette: 1,
-      photo: url
+  handleReset(){
+    const defaultCard = {
+        name:'',
+        job:'',
+        email:'',
+        phone:'',
+        linkedin:'',
+        github:'',
+        palette: 1,
+        photo: url
+    }
+    this.handleStorage(defaultCard)
+    this.setState({
+      card: defaultCard, 
+      isAvatarDefault: true
+    })
+  } 
+
+  handleCollapsible(event){
+    const newCollapsible = event.currentTarget.id;
+    console.log(newCollapsible);
+    this.setState(prevState => {
+      if(newCollapsible === prevState.collapsible) {
+        return {
+          collapsible: null
+        }
+      } else{
+        return{
+          collapsible: newCollapsible
+        }
+        }
+      });
   }
-  this.handleStorage(defaultCard)
-  this.setState({
-    card: defaultCard, 
-    isAvatarDefault: true
-  })
-} 
+
   handleStorage(data) {
     localStorage.setItem('card', JSON.stringify(data));
   }
@@ -95,22 +114,24 @@ handleReset(){
     }
   }
   render() {
-    const { card, isAvatarDefault } = this.state;
+    const {card, isAvatarDefault} = this.state;
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Card" render={routerProps => (
-          <Card 
-            card={card} 
-            handleColor={this.handleColor} 
-            handleInput={this.handleInput} 
-            photo={card.photo}
-            isAvatarDefault={isAvatarDefault}
-            updateAvatar={this.updateAvatar}
-            actionToReset={this.handleReset}
-            actionToStore={this.handleStorage}
-          /> )
+            <Card 
+              card={card} 
+              handleColor={this.handleColor} 
+              handleInput={this.handleInput} 
+              photo={card.photo}
+              isAvatarDefault={isAvatarDefault}
+              updateAvatar={this.updateAvatar}
+              actionToReset={this.handleReset}
+              actionToStore={this.handleStorage}
+              openCollapsible={this.handleCollapsible}
+              collapsible={this.state.collapsible}
+            /> )
           } 
           />
         </Switch>

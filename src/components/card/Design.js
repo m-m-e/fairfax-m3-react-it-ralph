@@ -2,9 +2,10 @@ import React from 'react';
 
 class Design extends React.Component {
   render() {
-    const {actionColor, palette} = this.props;
+    const {actionColor, palette, collapsible} = this.props;
+    console.log(collapsible);
     return (
-        <div className="design__main__container collapsible__container">
+        <div className={collapsible !== null ? 'design__main__container collapsible__container' : 'hidden'} >
           <div className="title__color__container">
             <p className="color__title">Colores</p>
           </div>
