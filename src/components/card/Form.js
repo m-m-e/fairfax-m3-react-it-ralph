@@ -7,7 +7,7 @@ import Collapsable from './Collapsable';
 
 class Form extends React.Component {
     render() {
-        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github } = this.props;
+        const { actionToPerform, actionColor, palette, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, handleTwitter, showTwitter } = this.props;
         return (
             <section className="main__form">
                 <form action="" method="post">
@@ -42,11 +42,13 @@ class Form extends React.Component {
                         fieldset={'share'}
                         title={'Comparte'}
                         icon={'fas fa-share-alt'}
-                        component={<Share />}
+                        component={<Share 
+                            handleTwitter={handleTwitter}
+                            showTwitter={showTwitter} />}
                     >
                     </Collapsable>
+                    <Twitter showTwitter={showTwitter} />
                 </form>
-                <Twitter />
             </section>
         );
     }
