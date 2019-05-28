@@ -106,13 +106,20 @@ class App extends React.Component {
 
   getData() {
     const newData = JSON.parse(localStorage.getItem('card'));
-    // console.log(newData);
+    console.log('*', newData);
     if (newData !== null ) {
-      this.setState(prevState => {
+      if(newData.photo !== url) {
+        this.setState(prevState => {
+          return {
+            card: newData,
+            isAvatarDefault: false
+          }
+        })
+      } else {
         return {
           card: newData
         }
-      })
+      }
     }
   }
   
