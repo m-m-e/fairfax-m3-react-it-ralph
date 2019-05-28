@@ -47,16 +47,18 @@ class App extends React.Component {
     });
   }
 
-  sendNewData () {
+  sendNewData (event) {
     const card = this.state.card;
 
     sendPetition(card)
       .then(result => {
         this.setState({
-          cardURL: result
+          cardURL: result.cardURL
         })
       })
       .catch(error => console.log(error));
+
+      this.handleTwitter(event);
   }
 
   handleColor(event) {
@@ -108,7 +110,7 @@ class App extends React.Component {
 
   getData() {
     const newData = JSON.parse(localStorage.getItem('card'));
-    console.log('*', newData);
+
     if (newData !== null ) {
       if(newData.photo !== url) {
         this.setState(prevState => {
@@ -131,7 +133,7 @@ class App extends React.Component {
     )
   }
   render() {
-    const { card, isAvatarDefault } = this.state;
+    const { card, isAvatarDefault, cardURL, showTwitter } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -148,7 +150,8 @@ class App extends React.Component {
             actionToStore={this.handleStorage}
             sendNewData={this.sendNewData}
             handleTwitter={this.handleTwitter}
-            showTwitter = {this.state.showTwitter}
+            showTwitter = {showTwitter}
+            cardURL={cardURL}
           /> )
           } 
           />
