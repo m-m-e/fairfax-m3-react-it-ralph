@@ -54,6 +54,7 @@ class Form extends React.Component {
                         fieldset={'share'}
                         title={'Comparte'}
                         icon={'fas fa-share-alt'}
+                        openCollapsible={openCollapsible}
                         component={<Share 
                             collapsible={collapsible}
                             sendNewData={sendNewData}
