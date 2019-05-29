@@ -17,9 +17,10 @@ class App extends React.Component {
         linkedin:'',
         github:'',
         palette: 1,
-        photo: url, 
+        photo: url
       },
       isAvatarDefault: true,
+      collapsible: 'Diseña',
       cardURL: '',
       showTwitter: false
   }
@@ -28,6 +29,7 @@ class App extends React.Component {
     this.updateAvatar = this.updateAvatar.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleStorage = this.handleStorage.bind(this);
+    this.handleCollapsible = this.handleCollapsible.bind(this);
     this.sendNewData = this.sendNewData.bind(this);
     this.handleTwitter = this.handleTwitter.bind(this);
   }
@@ -104,6 +106,20 @@ class App extends React.Component {
     })
   } 
 
+  handleCollapsible(event){
+    const newCollapsible = event.currentTarget.id;
+    this.setState(prevState => {
+      if(newCollapsible === prevState.collapsible) {
+        return {
+          collapsible: null
+        }
+      } else{
+        return{
+          collapsible: newCollapsible
+        }
+        }
+      });
+  }
   handleStorage(data) {
     localStorage.setItem('card', JSON.stringify(data));
   }
@@ -133,26 +149,28 @@ class App extends React.Component {
     )
   }
   render() {
-    const { card, isAvatarDefault, cardURL, showTwitter } = this.state;
+    const { card, isAvatarDefault, cardURL, showTwitter, collapsible } = this.state;
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Card" render={routerProps => (
-          <Card 
-            card={card} 
-            handleColor={this.handleColor} 
-            handleInput={this.handleInput} 
-            photo={card.photo}
-            isAvatarDefault={isAvatarDefault}
-            updateAvatar={this.updateAvatar}
-            actionToReset={this.handleReset}
-            actionToStore={this.handleStorage}
-            sendNewData={this.sendNewData}
-            handleTwitter={this.handleTwitter}
-            showTwitter = {showTwitter}
-            cardURL={cardURL}
-          /> )
+            <Card 
+              card={card} 
+              handleColor={this.handleColor} 
+              handleInput={this.handleInput} 
+              photo={card.photo}
+              isAvatarDefault={isAvatarDefault}
+              updateAvatar={this.updateAvatar}
+              actionToReset={this.handleReset}
+              actionToStore={this.handleStorage}
+              openCollapsible={this.handleCollapsible}
+              collapsible={collapsible}
+              sendNewData={this.sendNewData}
+              handleTwitter={this.handleTwitter}
+              showTwitter = {showTwitter}
+              cardURL={cardURL}
+            /> )
           } 
           />
         </Switch>
