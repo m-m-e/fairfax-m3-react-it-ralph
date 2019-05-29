@@ -4,7 +4,7 @@ import Preview from './Preview';
 
 class MainCard extends React.Component{
     render(){
-        const {card, handleColor, handleInput, isAvatarDefault, photo, updateAvatar, actionToReset, openCollapsible, collapsible} = this.props;
+        const {card, handleColor, handleInput, isAvatarDefault, photo, updateAvatar, actionToReset, openCollapsible, collapsible, sendNewData, handleTwitter, showTwitter, cardURL} = this.props;
         const {palette, name, job, email, phone, linkedin, github} = card;
         return(
             <main className="main__container">
@@ -20,10 +20,14 @@ class MainCard extends React.Component{
                 job={job} 
                 email={email} 
                 phone={phone} 
-                linkedin={linkedin} 
+                linkedin={linkedin}
                 github={github}
                 openCollapsible={openCollapsible}
-                collapsible={collapsible}
+                collapsible={collapsible} 
+                sendNewData={sendNewData}
+                handleTwitter={handleTwitter}
+                showTwitter={showTwitter}
+                cardURL={cardURL}
             />
             <Preview 
                 photo={photo} 
