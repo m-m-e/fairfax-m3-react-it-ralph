@@ -50,8 +50,10 @@ class Form extends React.Component {
                         title={'Comparte'}
                         icon={'fas fa-share-alt'}
                         openCollapsible={openCollapsible}
-                        component={<Share />}
-                        collapsible={collapsible}
+                        component={<Share
+                            collapsible={collapsible}
+                         />}
+                        
                     >
                     </Collapsable>
                 </form>

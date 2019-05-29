@@ -19,7 +19,7 @@ class App extends React.Component {
         photo: url
       },
       isAvatarDefault: true,
-      collapsible: null
+      collapsible: 'Diseña'
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
@@ -85,7 +85,6 @@ class App extends React.Component {
 
   handleCollapsible(event){
     const newCollapsible = event.currentTarget.id;
-    console.log(newCollapsible);
     this.setState(prevState => {
       if(newCollapsible === prevState.collapsible) {
         return {

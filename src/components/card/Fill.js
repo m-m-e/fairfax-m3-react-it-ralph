@@ -6,7 +6,7 @@ class Fill extends React.Component {
   render() {
     const {actionToPerform, isAvatarDefault, photo, updateAvatar, name, job, email, phone, linkedin, github, collapsible} = this.props;
     return(
-        <div className={collapsible !== null ? 'fill__container__section collapsible__container ' : 'hidden'}>
+        <div className={collapsible === 'Rellena' ? 'fill__container__section collapsible__container ' : 'hidden'}>
             <small className="legend">Los campos indicados con <span className="legend_plus">*</span> son obligatorios.</small>
             <div className="fill__main__container">
                 <label className="label__fill" htmlFor="name">Nombre completo <span className="legend_plus">*</span>

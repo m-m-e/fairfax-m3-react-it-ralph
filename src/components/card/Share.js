@@ -4,7 +4,7 @@ class Share extends React.Component{
     render (){
         const {collapsible} = this.props;
         return(
-            <div className={collapsible !== null ? 'container__button collapsible__container' : 'hidden'}>
+            <div className={collapsible === 'Comparte' ? 'container__button collapsible__container' : 'hidden'}>
                 <button className="share__button" type="submit">
                     <i className="far fa-address-card share__icon"></i>Crear tarjeta
                 </button>
