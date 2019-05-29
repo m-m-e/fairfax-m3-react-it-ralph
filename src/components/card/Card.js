@@ -4,6 +4,7 @@ import logo_adalab from '../../images/logo-adalab.png';
 import HeaderCard from './HeaderCard';
 import MainCard from './MainCard';
 import Footer from '../Footer';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
     render(){
@@ -35,5 +36,21 @@ class Card extends React.Component {
         return mainContent;
     }
 }
+
+Card.propTypes = {
+    card: PropTypes.object,
+    handleColor: PropTypes.func,
+    handleInput: PropTypes.func,
+    isAvatarDefault: PropTypes.bool,
+    photo: PropTypes.string,
+    updateAvatar: PropTypes.func,
+    actionToReset: PropTypes.func,
+    openCollapsible: PropTypes.func,
+    collapsible: PropTypes.string,
+    handleTwitter: PropTypes.func,
+    sendNewData: PropTypes.func,
+    showTwitter: PropTypes.bool,
+    cardURL: PropTypes.string
+};
 
 export default Card;

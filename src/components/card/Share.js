@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Share extends React.Component{
     render (){
@@ -12,5 +13,10 @@ class Share extends React.Component{
         );
     }
 }
+
+Share.propTypes = {
+    collapsible: PropTypes.string,
+    sendNewData: PropTypes.func
+  };
 
 export default Share;
