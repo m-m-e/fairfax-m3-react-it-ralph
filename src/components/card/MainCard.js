@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import Preview from './Preview';
+import PropTypes from 'prop-types';
 
 class MainCard extends React.Component{
     render(){
@@ -45,5 +46,21 @@ class MainCard extends React.Component{
         );
     }
 }
+
+MainCard.propTypes = {
+    card: PropTypes.object,
+    handleColor: PropTypes.func,
+    handleInput: PropTypes.func,
+    isAvatarDefault: PropTypes.bool,
+    photo: PropTypes.string,
+    updateAvatar: PropTypes.func,
+    actionToReset: PropTypes.func,
+    openCollapsible: PropTypes.func,
+    collapsible: PropTypes.string,
+    handleTwitter: PropTypes.func,
+    sendNewData: PropTypes.func,
+    showTwitter: PropTypes.bool,
+    cardURL: PropTypes.string
+};
 
 export default MainCard;

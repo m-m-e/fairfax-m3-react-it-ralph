@@ -4,6 +4,7 @@ import Fill from './Fill';
 import Share from './Share';
 import Twitter from './Twitter';
 import Collapsable from './Collapsable';
+import PropTypes from 'prop-types';
 
 class Form extends React.Component {
 
@@ -71,5 +72,26 @@ class Form extends React.Component {
         );
     }
 }
+
+Form.propTypes = {
+    actionColor: PropTypes.func,
+    actionToPerform: PropTypes.func,
+    isAvatarDefault: PropTypes.bool,
+    photo: PropTypes.string,
+    updateAvatar: PropTypes.func,
+    openCollapsible: PropTypes.func,
+    collapsible: PropTypes.string,
+    handleTwitter: PropTypes.func,
+    sendNewData: PropTypes.func,
+    showTwitter: PropTypes.bool,
+    cardURL: PropTypes.string,
+    palette: PropTypes.number,
+    name: PropTypes.string,
+    job: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+};
 
 export default Form;

@@ -106,7 +106,12 @@ Fill.propTypes = {
     email: PropTypes.string,
     phone: PropTypes.string,
     linkedin: PropTypes.string,
-    github: PropTypes.string
+    github: PropTypes.string,
+    actionToPerform: PropTypes.func,
+    isAvatarDefault: PropTypes.bool,
+    photo: PropTypes.string,
+    updateAvatar: PropTypes.func,
+    collapsible: PropTypes.string
 };
 
 export default Fill;

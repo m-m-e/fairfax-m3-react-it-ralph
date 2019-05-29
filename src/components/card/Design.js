@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Design extends React.Component {
   render() {
@@ -38,5 +39,11 @@ class Design extends React.Component {
     );
   }
 }
+
+Design.propTypes = {
+  actionColor: PropTypes.func,
+  collapsible: PropTypes.string,
+  palette: PropTypes.number
+};
 
 export default Design;

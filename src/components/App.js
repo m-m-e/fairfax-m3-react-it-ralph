@@ -22,7 +22,7 @@ class App extends React.Component {
       isAvatarDefault: true,
       collapsible: 'Diseña',
       cardURL: '',
-      showTwitter: false
+      showTwitter: false,
   }
     this.handleInput = this.handleInput.bind(this);
     this.handleColor = this.handleColor.bind(this);
